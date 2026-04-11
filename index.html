@@ -3,220 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetVista Pro | Premium Connectivity</title>
+    <title>NetVista Pro | Premium Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg: #030308;
             --accent: #00f2fe;
-            --accent-2: #4f46e5;
-            --pro-gold: #ffcc00;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent-glow: rgba(0, 242, 254, 0.4);
+            --card-bg: #0a0a15;
             --border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg); 
+            background-color: var(--bg); 
             color: white; 
-            overflow-x: hidden;
-            background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.05), transparent),
-                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.05), transparent);
-        }
-
-        .container { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 40px 20px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
+            /* පසුබිමේ ඇති ලස්සන ආලෝක ධාරා (Animated Background) */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(79, 70, 229, 0.05) 0%, transparent 40%);
         }
 
-        /* Hero Animation */
+        /* ප්‍රධාන කාඩ් එක */
         .glass-card {
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            border-radius: 40px;
-            padding: 50px 30px;
-            width: 100%;
-            max-width: 480px;
+            border-radius: 35px;
+            padding: 40px 25px;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-            animation: cardEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        @keyframes cardEntrance {
-            from { opacity: 0; transform: scale(0.9) translateY(30px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .logo-area i {
-            font-size: 50px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.3));
-        }
-
-        .price-tag { font-size: 56px; font-weight: 800; margin: 15px 0; background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        /* Feature List Animations */
-        .feature-item { 
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 15px; 
-            background: rgba(255,255,255,0.02); 
-            padding: 18px; 
-            border-radius: 24px;
-            border: 1px solid transparent;
-            text-align: left;
-            transition: 0.4s;
-        }
-        .feature-item:hover { 
-            background: rgba(255,255,255,0.05);
-            border-color: var(--accent);
-            transform: translateX(10px);
-        }
-        .feature-item i { font-size: 22px; color: var(--accent); margin-right: 20px; }
-        .feature-item b { font-size: 14px; display: block; }
-        .feature-item p { font-size: 11px; opacity: 0.5; margin-top: 2px; }
-
-        .btn { width: 100%; padding: 20px; border-radius: 24px; border: none; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 15px; display: block; text-decoration: none; }
-        .btn-main { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #000; box-shadow: 0 15px 30px rgba(0, 242, 254, 0.2); }
-        .btn-main:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 40px rgba(0, 242, 254, 0.3); }
-        .btn-outline { background: transparent; color: #666; border: 1px solid var(--border); font-size: 12px; }
-
-        /* Modal Design */
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; padding: 20px; backdrop-filter: blur(20px); }
-        .modal-content { 
-            background: #080810; 
-            padding: 40px; 
-            border-radius: 40px; 
-            border: 1px solid var(--border); 
-            max-width: 500px; 
-            width: 100%; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
             position: relative;
-            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-        .step-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 20px; margin-bottom: 12px; border-left: 4px solid var(--pro-gold); }
-        .btn-wa { background: #25D366; color: white; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* Multi-column Policy */
-        .policy-text { font-size: 12px; line-height: 1.8; color: #aaa; overflow-y: auto; max-height: 400px; padding-right: 15px; }
-        .policy-text h3 { color: var(--accent); margin: 20px 0 10px; font-size: 14px; text-transform: uppercase; }
+        .logo-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
 
-        .footer-logo { margin-top: 40px; opacity: 0.2; font-size: 10px; letter-spacing: 3px; }
+        .price-tag { 
+            font-size: 45px; 
+            font-weight: 800; 
+            margin: 10px 0; 
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        /* Features */
+        .feature-list { margin: 30px 0; text-align: left; }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+            animation: fadeInItem 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.2s; }
+        .feature-item:nth-child(2) { animation-delay: 0.3s; }
+        .feature-item:nth-child(3) { animation-delay: 0.4s; }
+        .feature-item:nth-child(4) { animation-delay: 0.5s; }
+
+        @keyframes fadeInItem {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent);
+            background: rgba(0, 242, 254, 0.05);
+            transform: scale(1.02);
+        }
+
+        .feature-item i { color: var(--accent); font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
+        .feature-item b { font-size: 14px; color: #fff; display: block; }
+        .feature-item p { font-size: 11px; color: #888; margin-top: 2px; }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border-radius: 20px;
+            border: none;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .btn-upgrade {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: #000;
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+
+        .btn-upgrade:hover { transform: translateY(-3px); box-shadow: 0 15px 35px var(--accent-glow); }
+
+        .btn-privacy {
+            background: transparent;
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-privacy:hover { color: #fff; }
+
+        /* Modal / Popup */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: #0f0f1a;
+            padding: 30px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            width: 90%;
+            max-width: 450px;
+            text-align: left;
+        }
+
+        .step { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 15px; margin-bottom: 12px; border-left: 3px solid var(--accent); }
+        .step h4 { color: var(--accent); font-size: 14px; margin-bottom: 5px; }
+        .step p { font-size: 12px; color: #aaa; }
+
+        .policy-box { max-height: 300px; overflow-y: auto; font-size: 12px; color: #aaa; line-height: 1.6; padding-right: 10px; }
+        .policy-box h3 { color: var(--accent); margin: 15px 0 5px; font-size: 14px; }
+
+        .btn-wa { background: #25D366; color: #fff; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<div class="container">
     <div class="glass-card">
-        <div class="logo-area"><i class="fas fa-shield-halved"></i></div>
-        <h1 style="font-size: 32px; letter-spacing: -1px;">NetVista Pro</h1>
-        <p style="opacity: 0.5; font-size: 14px;">Ultimate Network Stability</p>
+        <div class="logo-box">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1 style="font-size: 24px; margin-bottom: 5px;">NetVista Pro</h1>
+        <p style="color: #666; font-size: 13px;">Unlock Lifetime Features</p>
         
         <div class="price-tag">Rs. 200</div>
 
         <div class="feature-list">
             <div class="feature-item">
-                <i class="fas fa-bolt-lightning"></i>
+                <i class="fas fa-bolt"></i>
                 <div>
-                    <b>Real-time Speed Stability</b>
-                    <p>4G/5G ජාලය මන්දගාමී වීම වළක්වා ස්ථාවර වේගයක් ලබාදෙයි.</p>
+                    <b>Stable Speed Booster</b>
+                    <p>Network එක slow වෙන්න නොදී පවත්වා ගනී.</p>
                 </div>
             </div>
             <div class="feature-item">
-                <i class="fas fa-magnifying-glass-chart"></i>
+                <i class="fas fa-chart-line"></i>
                 <div>
-                    <b>Advanced Pro Analytics</b>
-                    <p>RSRP, SINR සහ Cell Tower දත්ත පිළිබඳ ගැඹුරු විශ්ලේෂණය.</p>
+                    <b>Advance Analytics</b>
+                    <p>සිග්නල් පිළිබඳ ගැඹුරු විශ්ලේෂණයක් ලබාදෙයි.</p>
                 </div>
             </div>
             <div class="feature-item">
                 <i class="fas fa-headset"></i>
                 <div>
-                    <b>24/7 Expert Solutions</b>
-                    <p>ඕනෑම ජාල ගැටළුවක් සඳහා ප්‍රමුඛතා තාක්ෂණික සහාය.</p>
+                    <b>24/7 Priority Support</b>
+                    <p>ඕනෑම ගැටළුවකට ක්ෂණික විසඳුම් ලබාගන්න.</p>
                 </div>
             </div>
             <div class="feature-item">
-                <i class="fas fa-rocket"></i>
+                <i class="fas fa-star"></i>
                 <div>
-                    <b>Lifetime Future Access</b>
-                    <p>සියලුම ඉදිරි විශේෂාංග Pro සාමාජිකයින්ට සම්පූර්ණයෙන්ම නොමිලේ.</p>
+                    <b>Future Access</b>
+                    <p>සියලුම ඉදිරි විශේෂාංග ඔබට නොමිලේ හිමිවේ.</p>
                 </div>
             </div>
         </div>
 
-        <button class="btn btn-main" onclick="openModal('buyModal')">UPGRADE TO PRO</button>
-        <button class="btn btn-outline" onclick="openModal('policyModal')">PRIVACY & TERMS</button>
-
-        <p class="footer-logo">SRIPCI APP DEVELOPMENT</p>
+        <button class="btn btn-upgrade" onclick="openModal('buyModal')">UPGRADE TO PRO</button>
+        <button class="btn btn-privacy" onclick="openModal('policyModal')">PRIVACY & TERMS</button>
     </div>
-</div>
 
-<div class="modal" id="buyModal">
-    <div class="modal-content">
-        <h2 style="margin-bottom: 25px; color: var(--pro-gold);">Pro Activation පියවර</h2>
-        <div class="step-card">
-            <b>1. අපව අමතන්න</b>
-            <p>පහත WhatsApp බටන් එක හරහා අපට පණිවිඩයක් එවන්න.</p>
+    <div class="modal" id="buyModal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 20px;">Pro සක්‍රීය කරගන්න</h2>
+            <div class="step">
+                <h4>01. අපව සම්බන්ධ කරගන්න</h4>
+                <p>පහත WhatsApp බටන් එක හරහා අපට පණිවිඩයක් එවන්න.</p>
+            </div>
+            <div class="step">
+                <h4>02. මුදල් ගෙවන්න</h4>
+                <p>රු. 200 ක මුදල Bank Transfer හෝ Reload මගින් ගෙවා රිසිට් පත එවන්න.</p>
+            </div>
+            <div class="step">
+                <h4>03. Key එක ලබාගන්න</h4>
+                <p>තහවුරු කිරීමෙන් පසු ඔබට Activation Key එක ලැබෙනු ඇත.</p>
+            </div>
+            <a href="https://wa.me/94776688057?text=NetVista%20Pro%20Upgrade" class="btn btn-wa">
+                <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Support
+            </a>
+            <button class="btn btn-privacy" style="margin-top: 10px;" onclick="closeModal('buyModal')">පසුපසට</button>
         </div>
-        <div class="step-card">
-            <b>2. රු. 200 ක් ගෙවන්න</b>
-            <p>Bank Transfer හෝ Reload මගින් ගෙවා රිසිට් පත එවන්න.</p>
-        </div>
-        <div class="step-card">
-            <b>3. Pro සක්‍රීය කරන්න</b>
-            <p>ඔබට ලැබෙන Activation Key එක ඇප් එකට ඇතුළත් කරන්න.</p>
-        </div>
-        <a href="https://wa.me/94776688057?text=I%20want%20to%20upgrade%20to%20NetVista%20Pro." class="btn btn-wa">
-            <i class="fab fa-whatsapp" style="margin-right: 12px;"></i> WhatsApp Support
-        </a>
-        <button class="btn btn-outline" onclick="closeModal('buyModal')">CLOSE</button>
     </div>
-</div>
 
-<div class="modal" id="policyModal">
-    <div class="modal-content" style="max-width: 600px;">
-        <h2 style="color: var(--accent); margin-bottom: 20px;">Privacy Policy & Terms</h2>
-        <div class="policy-text">
-            <p>Last Updated: April 2026</p>
-            
-            <h3>1. Data Transparency</h3>
-            <p>NetVista Pro captures real-time signal metrics including RSRP (Reference Signal Received Power), RSRQ, SINR, and Cell ID. This data is processed locally on your device to stabilize connection parameters.</p>
-
-            <h3>2. Location Usage</h3>
-            <p>Access to precise location (GPS) and background location is essential to map the nearest cellular towers. This data is never shared with third parties for marketing.</p>
-
-            <h3>3. Real-time Optimization</h3>
-            <p>The "Speed Booster" feature works by identifying network congestion and refreshing the radio frequency (RF) link. No external servers are used to tunnel your traffic; your privacy remains intact.</p>
-
-            <h3>4. Pro Membership & Refund</h3>
-            <p>The Pro Activation Key provides lifetime access. Due to the digital nature of the product, payments are non-refundable once the key is issued. However, 24/7 support is guaranteed for technical issues.</p>
-
-            <h3>5. Third-party SDKs</h3>
-            <p>We use Google Firebase for crash analytics and Mapbox/OSM for tower mapping. These services handle data according to their respective privacy policies.</p>
-
-            <h3>6. Security</h3>
-            <p>Your Device ID is used only for license verification. We employ industry-standard encryption to protect any data sent during support sessions.</p>
+    <div class="modal" id="policyModal">
+        <div class="modal-content">
+            <h2 style="color: var(--accent); margin-bottom: 15px;">Privacy Policy</h2>
+            <div class="policy-box">
+                <p>Last Updated: April 2026</p>
+                <h3>1. Introduction</h3>
+                <p>NetVista is committed to protecting your privacy. This policy explains how we handle your network data to provide optimization features.</p>
+                <h3>2. Data Collection</h3>
+                <p>We monitor network signals (RSRP, SINR, Cell ID) and device ID to analyze and stabilize your connection. This data is processed locally on your device.</p>
+                <h3>3. Location Permission</h3>
+                <p>Access to precise location is required to map and identify the nearest cellular towers for real-time analysis.</p>
+                <h3>4. No Third-party Sharing</h3>
+                <p>Your network performance data is never shared or sold to third-party marketing companies. It is strictly used for the app's functionality.</p>
+                <h3>5. Pro Features</h3>
+                <p>The Pro membership is a one-time payment for lifetime access. Technical support is provided via WhatsApp for all pro members.</p>
+            </div>
+            <button class="btn btn-upgrade" style="margin-top: 20px;" onclick="closeModal('policyModal')">මම එකඟයි</button>
         </div>
-        <button class="btn btn-main" style="margin-top: 25px;" onclick="closeModal('policyModal')">I UNDERSTAND</button>
     </div>
-</div>
 
-<script>
-    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-    window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display='none'; }
-</script>
-
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display='none'; }
+    </script>
 </body>
 </html>
