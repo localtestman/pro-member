@@ -69,20 +69,20 @@
             color: #fff;
         }
 
-        .feature-list { margin: 30px 0; text-align: left; }
+        .feature-list { margin: 25px 0; text-align: left; }
         
         .feature-item {
             display: flex;
             align-items: center;
-            padding: 15px;
-            margin-bottom: 12px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
             background: rgba(255,255,255,0.03);
-            border-radius: 20px;
+            border-radius: 18px;
             border: 1px solid transparent;
             transition: 0.3s;
         }
 
-        .feature-item i { color: var(--accent); font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
+        .feature-item i { color: var(--accent); font-size: 18px; margin-right: 15px; width: 25px; text-align: center; }
         .feature-item b { font-size: 14px; color: #fff; display: block; }
         .feature-item p { font-size: 11px; color: #888; margin-top: 2px; }
 
@@ -95,7 +95,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -157,12 +157,21 @@
 
         <div class="feature-list">
             <div class="feature-item">
+                <i class="fas fa-rectangle-ad" style="color: #ff4757;"></i>
+                <div>
+                    <b>No Advertisements</b>
+                    <p>කරදරකාරී දැන්වීම් වලින් තොරව App එක භාවිතා කරන්න.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
                 <i class="fas fa-bolt"></i>
                 <div>
                     <b>Speed Stability Booster</b>
                     <p>Connection එක slow වෙන්න නොදී පවත්වා ගනී.</p>
                 </div>
             </div>
+
             <div class="feature-item">
                 <i class="fas fa-chart-line"></i>
                 <div>
@@ -170,6 +179,15 @@
                     <p>සිග්නල් පිළිබඳ වෘත්තීය විශ්ලේෂණයක් ලබාදෙයි.</p>
                 </div>
             </div>
+
+            <div class="feature-item">
+                <i class="fas fa-rocket"></i>
+                <div>
+                    <b>Future Updates</b>
+                    <p>ඉදිරියේදී එකතු වන සියලුම විශේෂාංග නොමිලේ.</p>
+                </div>
+            </div>
+
             <div class="feature-item">
                 <i class="fas fa-headset"></i>
                 <div>
@@ -215,16 +233,16 @@
                 <p>NetVista collects real-time network metrics (RSRP, SINR, Cell ID) and device information to optimize your connection stability.</p>
 
                 <h3>2. Service Availability & Maintenance</h3>
-                <p><b>Please Note:</b> Pro membership features and technical support are provided only as long as the application remains active and under official development by the original developers. By upgrading to Pro, you acknowledge and agree that service availability is subject to the developers' ongoing maintenance of the project.</p>
+                <p><b>Please Note:</b> Pro membership features and technical support are provided only as long as the application remains active and under official development by the original developers.</p>
 
-                <h3>3. Location Usage</h3>
-                <p>Precise location access is required to identify the nearest cellular towers for real-time analysis.</p>
+                <h3>3. Ad-Free Experience</h3>
+                <p>Pro users will experience an ad-free interface. This applies to all internal app banners and interstitials.</p>
 
                 <h3>4. Privacy Assurance</h3>
                 <p>Your data is processed locally and is never shared with third-party marketing agencies.</p>
 
                 <h3>5. Payments & Support</h3>
-                <p>The Pro Key is a one-time purchase for lifetime access during the operational period of the app. Technical support is prioritized for all Pro members via our WhatsApp channel.</p>
+                <p>The Pro Key is a one-time purchase for lifetime access during the operational period of the app. Technical support is prioritized for all Pro members.</p>
             </div>
             <button class="btn btn-upgrade" style="margin-top: 20px;" onclick="closeModal('policyModal')">I AGREE</button>
         </div>
