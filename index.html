@@ -3,184 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetVista Pro - Premium Connectivity</title>
+    <title>NetVista Pro - Upgrade</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #030308;
-            --card-bg: rgba(20, 20, 35, 0.7);
+            --bg: #05050a;
+            --card-bg: rgba(15, 15, 25, 0.9);
             --accent: #00f2fe;
             --pro-gold: #ffcc00;
-            --danger: #ff4d4d;
             --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; line-height: 1.6; }
 
-        .container { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; min-height: 100vh; }
+        .container { display: flex; flex-direction: column; align-items: center; padding: 25px; min-height: 100vh; }
 
         .glass-card {
             background: var(--card-bg);
             backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
             border-radius: 40px;
-            padding: 45px 25px;
+            padding: 40px 25px;
             width: 100%;
-            max-width: 480px;
+            max-width: 450px;
             text-align: center;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.6);
-            animation: slideUp 0.8s ease;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            animation: fadeIn 0.8s ease;
         }
 
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .price-tag { font-size: 42px; font-weight: 800; color: var(--accent); margin: 10px 0; letter-spacing: -1px; }
+        .price-tag { font-size: 48px; font-weight: 800; color: white; margin: 10px 0 20px; }
 
-        .info-title { font-size: 13px; font-weight: 700; color: var(--pro-gold); text-transform: uppercase; margin: 25px 0 12px; letter-spacing: 2px; }
-
-        .feature-box {
-            background: rgba(255,255,255,0.03);
-            padding: 15px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            border: 1px solid transparent;
-            text-align: left;
-            transition: 0.3s;
-        }
-        .feature-box:hover { border-color: var(--accent); background: rgba(0, 242, 254, 0.05); }
-        .feature-box b { color: var(--accent); font-size: 14px; display: block; }
-        .feature-box p { font-size: 12px; opacity: 0.7; margin-top: 4px; }
-
-        /* Future Promise Box */
-        .future-box {
-            background: rgba(255, 204, 0, 0.05);
-            border: 1px dashed var(--pro-gold);
-            padding: 18px;
-            border-radius: 20px;
-            margin-top: 20px;
+        .feature-item { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 12px; 
+            background: rgba(255,255,255,0.03); 
+            padding: 12px; 
+            border-radius: 15px;
             text-align: left;
         }
-        .future-box h4 { color: var(--pro-gold); font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; }
-        .future-box h4 i { margin-right: 10px; }
-        .future-box ul { list-style: none; font-size: 12px; color: #ccc; }
-        .future-box ul li { margin-bottom: 5px; display: flex; align-items: center; }
-        .future-box ul li i { font-size: 8px; margin-right: 8px; color: var(--pro-gold); }
+        .feature-item i { margin-right: 15px; font-size: 18px; color: var(--accent); width: 25px; text-align: center; }
+        .feature-item b { font-size: 13px; color: white; display: block; }
+        .feature-item p { font-size: 11px; opacity: 0.6; }
 
-        .support-box {
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(0, 242, 254, 0.02));
-            border: 1px solid var(--accent);
-            padding: 15px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-        .support-box i { font-size: 24px; color: var(--accent); margin-right: 15px; }
-        .support-box b { color: white; font-size: 13px; display: block; line-height: 1.3; }
-
-        .btn { width: 100%; padding: 18px; border-radius: 20px; border: none; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 15px; }
+        .btn { width: 100%; padding: 18px; border-radius: 20px; border: none; font-weight: 700; font-size: 15px; cursor: pointer; transition: 0.3s; margin-top: 15px; display: block; text-decoration: none; text-align: center; }
         .btn-main { background: white; color: black; }
-        .btn-main:hover { background: var(--accent); transform: translateY(-3px); }
-        .btn-outline { background: transparent; color: #777; border: 1px solid var(--glass-border); font-size: 12px; margin-top: 10px; }
+        .btn-main:hover { background: var(--accent); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: #777; border: 1px solid var(--glass-border); font-size: 12px; }
 
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); display: none; justify-content: center; align-items: center; z-index: 2000; padding: 20px; }
-        .modal-content { background: #0a0a12; border: 1px solid var(--glass-border); padding: 30px; border-radius: 35px; width: 100%; max-width: 500px; max-height: 85vh; overflow-y: auto; position: relative; text-align: left; }
-        .close-btn { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; opacity: 0.5; }
+        /* Modal Styles */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; backdrop-filter: blur(15px); }
+        .modal-content { background: #0a0a15; padding: 30px; border-radius: 30px; border: 1px solid var(--glass-border); max-width: 450px; width: 100%; position: relative; text-align: left; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; opacity: 0.5; }
 
-        .wa-btn { display: flex; align-items: center; justify-content: center; background: #25D366; color: white; text-decoration: none; padding: 18px; border-radius: 18px; font-weight: 700; margin-top: 25px; }
-        .brand { font-size: 10px; opacity: 0.3; margin-top: 30px; letter-spacing: 2px; }
+        .step-box { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 15px; margin-bottom: 10px; border-left: 3px solid var(--pro-gold); }
+        .step-box b { color: var(--pro-gold); font-size: 14px; }
+        .step-box p { font-size: 12px; opacity: 0.8; margin-top: 5px; }
+
+        .btn-wa { background: #25D366; color: white; }
+        .btn-wa:hover { background: #1eb954; }
+
+        .brand-footer { margin-top: 30px; font-size: 10px; opacity: 0.3; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="glass-card">
-        <h1 style="font-size: 32px; letter-spacing: -1px;">NetVista Pro</h1>
-        <p style="opacity: 0.5; font-size: 14px;">Master Your Mobile Network</p>
-        
+        <h1 style="font-size: 28px;">NetVista Pro</h1>
+        <p style="opacity: 0.5; font-size: 13px;">Unlock Lifetime Features</p>
         <div class="price-tag">Rs. 200</div>
 
-        <div class="support-box">
-            <i class="fas fa-headset"></i>
+        <div class="feature-item">
+            <i class="fas fa-bolt"></i>
             <div>
-                <b style="color: var(--accent); text-transform: uppercase; font-size: 11px;">Expert Assistance</b>
-                <b>Pro members get 24/7 priority support for signal optimization.</b>
+                <b>Real-time Speed Booster</b>
+                <p>Network එක slow වීමට නොදී නිරන්තරයෙන් refresh කරයි.</p>
             </div>
         </div>
 
-        <div class="info-title">Unlocked Features</div>
-
-        <div class="feature-box">
-            <b><i class="fas fa-ban" style="margin-right: 8px; color: var(--danger);"></i> 100% Ad-Free</b>
-            <p>ප්‍රචාරක දැන්වීම් වලින් තොර පිරිසිදු අත්දැකීමක්.</p>
+        <div class="feature-item">
+            <i class="fas fa-ban"></i>
+            <div>
+                <b>100% Ad-Free</b>
+                <p>දැන්වීම් රහිත පිරිසිදු අත්දැකීමක්.</p>
+            </div>
         </div>
 
-        <div class="feature-box">
-            <b><i class="fas fa-microchip" style="margin-right: 8px;"></i> Full Analytics Access</b>
-            <p>Advanced signal tracking සහ network tower insights.</p>
-        </div>
-
-        <div class="future-box">
-            <h4><i class="fas fa-rocket"></i> Coming Soon for Pro</h4>
-            <ul>
-                <li><i class="fas fa-circle"></i> Real-time 5G Band Monitoring</li>
-                <li><i class="fas fa-circle"></i> AI-Powered Internet Speed Boost</li>
-                <li><i class="fas fa-circle"></i> Network Tower History Mapping</li>
-                <li><i class="fas fa-circle"></i> Automated Signal Alert System</li>
-            </ul>
-            <p style="font-size: 11px; margin-top: 10px; color: var(--pro-gold); font-weight: 600;">
-                * All future Pro features will be FREE for existing members!
-            </p>
-        </div>
-
-        <button class="btn btn-main" onclick="toggleModal('buyModal')">Get Pro Activation Key</button>
-        <button class="btn btn-outline" onclick="toggleModal('policyModal')">Privacy Policy & Terms</button>
+        <button class="btn btn-main" onclick="openModal('buyModal')">Get Pro Activation Key</button>
         
-        <p class="brand">© 2026 SRIPCI APP DEVELOPMENT</p>
+        <button class="btn btn-outline" onclick="openModal('policyModal')">Privacy Policy & Terms</button>
+
+        <p class="brand-footer">© 2026 SRIPCI APP DEVELOPMENT</p>
     </div>
 </div>
 
 <div class="modal" id="buyModal">
     <div class="modal-content">
-        <span class="close-btn" onclick="toggleModal('buyModal')">&times;</span>
-        <h2 style="color:var(--pro-gold); margin-bottom:15px;">Get Pro Key & Support</h2>
-        <div style="font-size:14px; color: #ccc;">
-            <p><b style="color:white;">1. WhatsApp:</b> පහත බටන් එකෙන් අපව සම්බන්ධ කරගන්න.</p><br>
-            <p><b style="color:white;">2. Payment:</b> රු. 200 ක මුදල ගෙවා රිසිට් පත එවන්න.</p><br>
-            <p><b style="color:white;">3. Expert Help:</b> Key එක ලබාගෙන අපේ Team එකේ සහාය ඇතිව සිග්නල් Improve කරගන්න.</p>
+        <span class="close-btn" onclick="closeModal('buyModal')">&times;</span>
+        <h2 style="color: var(--pro-gold); margin-bottom: 20px; font-size: 20px;">මුදල් ගෙවන ආකාරය</h2>
+        
+        <div class="step-box">
+            <b>01. සම්බන්ධ වන්න</b>
+            <p>පහත ඇති WhatsApp බටන් එක හරහා අපව සම්බන්ධ කරගන්න.</p>
         </div>
-        <a href="https://wa.me/94776688057?text=NetVista%20Pro%20Key%20eka%20ganna%20one.%20I%20also%20need%20expert%20support%20to%20improve%20my%20signal." class="wa-btn">
-            <i class="fab fa-whatsapp" style="margin-right:10px; font-size:22px;"></i> WhatsApp Support & Key
+
+        <div class="step-box">
+            <b>02. ගෙවීම් සිදු කරන්න</b>
+            <p>රු. 200 ක මුදල Bank Transfer හෝ Reload මගින් ගෙවා එහි රිසිට් පත එවන්න.</p>
+        </div>
+
+        <div class="step-box">
+            <b>03. Activation Key එක ලබාගන්න</b>
+            <p>රිසිට් පත තහවුරු කළ පසු ඔබේ Pro Activation Key එක එවනු ලැබේ.</p>
+        </div>
+
+        <a href="https://wa.me/94776688057?text=NetVista%20Pro%20Activation%20Key%20eka%20ganna%20one." class="btn btn-wa">
+            <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp හරහා Key එක ගන්න
         </a>
     </div>
 </div>
 
 <div class="modal" id="policyModal">
     <div class="modal-content">
-        <span class="close-btn" onclick="toggleModal('policyModal')">&times;</span>
-        <h2 style="color: var(--accent);">NetVista - Privacy Policy & Terms</h2>
-        <div style="font-size: 13px; opacity: 0.9; margin-top: 20px; line-height: 1.6;">
+        <span class="close-btn" onclick="closeModal('policyModal')">&times;</span>
+        <h2 style="color: var(--accent); margin-bottom: 15px;">Privacy Policy</h2>
+        <div style="font-size: 12px; opacity: 0.8; line-height: 1.6; max-height: 300px; overflow-y: auto; padding-right: 10px;">
             <p><b>Last Updated: May 2024</b></p><br>
-            <p><b>1. Information We Collect:</b> We collect Location (Foreground & Background), Device Information (ID, Model), and Signal Data (RSRP, Cell ID).</p><br>
-            <p><b>2. How We Use It:</b> To provide real-time signal analysis and tower mapping.</p><br>
-            <p><b>3. Third-Party Services:</b> Google Play Services, Firebase, AdMob, OSMDroid.</p><br>
-            <p><b>4. Data Retention:</b> You can request data deletion via email.</p><br>
-            <p><b>5. Terms:</b> By using NetVista, you agree to grant necessary permissions (Location, Phone State).</p><br>
-            <p><b>6. Contact:</b> sripci.dev@gmail.com</p>
+            <p>1. <b>Data Collection:</b> We monitor Network Signal (RSRP, SINR), Location, and Device ID for optimization.</p><br>
+            <p>2. <b>Usage:</b> Used for real-time tower mapping and performance analytics.</p><br>
+            <p>3. <b>Third Parties:</b> Google Play Services, Firebase, AdMob.</p><br>
+            <p>4. <b>Support:</b> Pro members receive priority technical support.</p>
         </div>
+        <button class="btn btn-outline" style="margin-top: 15px; color: white;" onclick="closeModal('policyModal')">Close</button>
     </div>
 </div>
 
 <script>
-    function toggleModal(id) {
-        const modal = document.getElementById(id);
-        modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+    function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
     }
     window.onclick = function(event) {
-        if (event.target.className === 'modal') { event.target.style.display = "none"; }
+        if (event.target.className === 'modal') {
+            event.target.style.display = "none";
+        }
     }
 </script>
 
